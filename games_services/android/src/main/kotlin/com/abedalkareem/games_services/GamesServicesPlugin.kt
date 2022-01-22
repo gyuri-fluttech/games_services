@@ -264,6 +264,8 @@ class GamesServicesPlugin(private var activity: Activity? = null) : FlutterPlugi
   override fun onMethodCall(call: MethodCall, result: Result) {
     when (call.method) {
       Methods.unlock -> {
+        println("--------------------------- result = ${call.argument<String>("achievementID")}")
+
         unlock(call.argument<String>("achievementID") ?: "", result)
       }
       Methods.increment -> {
